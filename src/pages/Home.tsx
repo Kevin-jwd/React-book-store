@@ -1,14 +1,12 @@
-import Header from "../components/Header";
-import { formatNumber } from "../utils/format";
-
-const COUNT = 10000;
+import Header from "../components/common/Header";
+import Footer from "../components/common/Footer";
 
 function Home() {
     return (
         <>
             <Header />
             <div>home body</div>
-            <div>count: {formatNumber(COUNT)}</div>
+            <Footer />
         </>
     );
 }

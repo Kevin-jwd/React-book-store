@@ -1,7 +1,7 @@
 type ThemeName = "light" | "dark";
 type Colorkey = "primary" | "background" | "secondary" | "third";
 
-interface Theme {
+export interface Theme {
     name: ThemeName;
     color: Record<Colorkey, string>;
 }

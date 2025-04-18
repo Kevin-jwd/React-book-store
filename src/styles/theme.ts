@@ -1,4 +1,4 @@
-type ThemeName = "light" | "dark";
+export type ThemeName = "light" | "dark";
 type Colorkey = "primary" | "background" | "secondary" | "third";
 
 export interface Theme {

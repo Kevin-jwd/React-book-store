@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Theme } from "../../styles/theme";
 
 function Header() {
     return (
@@ -8,10 +9,10 @@ function Header() {
     );
 }
 
-const HeaderStyle = styled.header`
-    background-color: #333;
+const HeaderStyle = styled.header<{theme: Theme}>`
+    background-color: ${({theme}) => theme.color.background};
     h1 {
-        color: white;
+        color: ${({theme}) => theme.color.primary};
     }
 `;
 

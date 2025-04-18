@@ -1,7 +1,8 @@
+import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 
 function App() {
-    return <Home></Home>;
+    return <Layout children={<Home />}></Layout>;
 }
 
 export default App;

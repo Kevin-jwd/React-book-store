@@ -25,3 +25,14 @@ export const dark: Theme = {
         third: "darkgreen",
     },
 };
+
+export const getTheme = (themeName: ThemeName): Theme => {
+    switch (themeName) {
+        case "dark":
+            return dark;
+        case "light":
+            return light;
+        default:
+            return light;
+    }
+}

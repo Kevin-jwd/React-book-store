@@ -1,12 +1,10 @@
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 import { BookStoreThemeProvider } from "./context/themeContext";
-import ThemeSwitcher from "./components/header/ThemeSwitcher";
 
 function App() {
     return (
         <BookStoreThemeProvider>
-            <ThemeSwitcher />
             <Layout>
                 <Home />
             </Layout>

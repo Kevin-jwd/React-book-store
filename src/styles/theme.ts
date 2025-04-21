@@ -1,5 +1,11 @@
 export type ThemeName = "light" | "dark";
-export type Colorkey = "primary" | "background" | "secondary" | "third";
+export type Colorkey =
+    | "primary"
+    | "background"
+    | "secondary"
+    | "third"
+    | "border"
+    | "text";
 
 export type HeadingSize = "large" | "medium" | "small";
 export type ButtonSize = "large" | "medium" | "small";
@@ -22,7 +28,7 @@ export interface Theme {
     buttonScheme: {
         [key in ButtonScheme]: {
             color: string;
-            backgrounColor: string;
+            backgroundColor: string;
         };
     };
     borderRadius: {
@@ -37,6 +43,8 @@ export const light: Theme = {
         background: "lightgray",
         secondary: "blue",
         third: "green",
+        border: "gray",
+        text: "black",
     },
     heading: {
         large: {
@@ -66,11 +74,11 @@ export const light: Theme = {
     buttonScheme: {
         primary: {
             color: "white",
-            backgrounColor: "midnightblue",
+            backgroundColor: "midnightblue",
         },
         normal: {
             color: "black",
-            backgrounColor: "lightgray",
+            backgroundColor: "lightgray",
         },
     },
     borderRadius: {
@@ -86,6 +94,8 @@ export const dark: Theme = {
         background: "midnightblue",
         secondary: "darkblue",
         third: "darkgreen",
+        border: "gray",
+        text: "black",
     },
 };
 

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Theme } from "../../styles/theme";
 import book_store_logo from "../../assets/images/book_store_logo.png";
 import { FaSignInAlt, FaRegUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CATEGORY = [
     {
@@ -26,21 +27,23 @@ function Header() {
     return (
         <HeaderStyle>
             <h1 className="logo">
-                <img src={book_store_logo} alt="book store" />
+                <Link to="/">
+                    <img src={book_store_logo} alt="book store" />
+                </Link>
             </h1>
             <nav className="category">
                 <ul>
                     {CATEGORY.map((item) => (
                         <li key={item.id}>
-                            <a
-                                href={
+                            <Link
+                                to={
                                     item.id === null
                                         ? "/books"
                                         : `/books?category_id=${item.id}`
                                 }
                             >
                                 {item.name}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -48,16 +51,16 @@ function Header() {
             <nav className="auth">
                 <ul>
                     <li>
-                        <a href="/login">
-                            <FaSignInAlt/>
+                        <Link to="/login">
+                            <FaSignInAlt />
                             로그인
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/login">
-                            <FaRegUser/>
+                        <Link to="/login">
+                            <FaRegUser />
                             회원가입
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
@@ -108,7 +111,7 @@ const HeaderStyle = styled.header<{ theme: Theme }>`
                     display: flex;
                     align-items: center;
                     line-height: 1;
-                    svg{
+                    svg {
                         margin-right: 6px;
                     }
                 }

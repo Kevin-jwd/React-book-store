@@ -41,7 +41,7 @@ function Header() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/login">
+                        <Link to="/register">
                             <FaRegUser />
                             회원가입
                         </Link>

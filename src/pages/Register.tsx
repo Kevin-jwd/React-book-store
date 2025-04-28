@@ -4,21 +4,39 @@ import InputText from "../components/common/InputText";
 import Button from "../components/common/Button";
 import { Link } from "react-router-dom";
 import { Theme } from "../styles/theme";
+import { useState } from "react";
 
 function Register() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    }
+
     return (
         <>
             <Title size="large">회원가입</Title>
             <RegisterStyle>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <fieldset>
-                        <InputText placeholder="이메일" inputType="email"/>
+                        <InputText
+                            placeholder="이메일"
+                            inputType="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
                     </fieldset>
                     <fieldset>
-                        <InputText placeholder="비밀번호" inputType="password"/>
+                        <InputText
+                            placeholder="비밀번호"
+                            inputType="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                     </fieldset>
                     <fieldset>
-                        <Button size="medium" scheme="primary">
+                        <Button type="submit" size="medium" scheme="primary">
                             회원가입
                         </Button>
                     </fieldset>

@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         element: <Layout><div>도서 목록</div></Layout>,
     },
     {
-        path: "/register",
+        path: "/users/register",
         element: <Layout><Register></Register></Layout>,
     },
 ]);
